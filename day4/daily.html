@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Video {
+  constructor(title, uploader, time) {
+    this.title = title;
+    this.uploader = uploader;
+    this.time = time;
+  }
+
+  watch() {
+    console.log(`${this.uploader} watched all ${this.time} seconds of ${this.title}!`);
+  }
+}
+
+
+const video1 = new Video('Funny Cats Compilation', 'User123', 300);
+video1.watch();
+
+
+const video2 = new Video('Cooking Tutorial', 'ChefCook', 600);
+video2.watch();
+
+
+const videoData = [
+  ['Funny Dogs Compilation', 'User456', 450],
+  ['Music Video', 'Singer123', 240],
+  ['Travel Vlog', 'Explorer87', 900],
+  ['Gaming Livestream', 'GamerX', 1800],
+  ['Educational Lecture', 'ProfessorABC', 1200]
+];
+
+
+const videos = [];
+for (let i = 0; i < videoData.length; i++) {
+  const [title, uploader, time] = videoData[i];
+  const video = new Video(title, uploader, time);
+  videos.push(video);
+}
+
+
+videos.forEach(video => video.watch());
+
+    </script>
+</body>
+</html>
