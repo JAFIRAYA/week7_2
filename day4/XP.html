@@ -21,21 +21,29 @@
 const {name, location: {country, city, coordinates: [lat, lng]}} = person;
 
 console.log(`I am ${name} from ${city}, ${country}. Latitude(${lat}), Longitude(${lng})`);
-//i'am john from Vancouver ,Canada,Latitude (49.2827),Longitude(-123.1207)
+//=>i'am john from Vancouver ,Canada,Latitude (49.2827),Longitude(-123.1207)
 ---------------exercice2----------------------
 function displayStudentInfo(objUser) {
   const { first, last } = objUser;
   return `Your full name is ${first} ${last}`;
 }
 
-console.log(displayStudentInfo({first: 'Elie', last:'Schoppik'}));
+console.log(displayStudentInfo({ first: 'Elie', last: 'Schoppik' }));
+
 
 -------------------exercice3------------------
 
 const users = { user1: 18273, user2: 92833, user3: 90315 }
 
-const usersArray = Object.entries(users).map(([key, value]) => [key, value]);
-console.log(usersArray);
+const users = { user1: 18273, user2: 92833, user3: 90315 };
+
+
+const usersArray = Object.entries(users);
+
+const modifiedArray = usersArray.map(([key, value]) => [key, value * 2]);
+
+console.log(modifiedArray);
+
 -------------------exercice4------------------
 class Person {
   constructor(name) {
@@ -47,14 +55,25 @@ const member = new Person('John');
 console.log(typeof member);// the output will be "object"
 -------------------exercice5------------------
 
+
 class Labrador extends Dog {
   constructor(name, size) {
     super(name);
     this.size = size;
   }
-}-------------------exercice6-----------------*/
-//[2] === [2] evaluates to false
-//{} === {} also evaluates to false
+}
+
+}-------------------exercice6-----------------
+//The statements [2] === [2] and {} === {} will both evaluate to false.
+
+//1-object1.number: 4
+//`object2.number`: 4
+//`object3.number`: 4
+//`object4.number`: 5
+Initialement, object1est affecté l'objet { number: 5 }.
+Ensuite, object2est assignée la valeur de object1, créant une référence au même objet.
+De même, object3est affectée la valeur de object2, se référant également au même objet.
+Enfin, object4est affecté un nouvel objet { number: 5 }, qui est un objet séparé en mémoire.
 
 class Animal {
   constructor(name, type, color) {
@@ -66,11 +85,13 @@ class Animal {
 
 class Mamal extends Animal {
   sound(sound) {
-    return `Moooo I'm a ${this.type}, named ${this.name} and I'm ${this.color}. ${sound}`;
+    return `Moooo I'm a ${this.type}, named ${this.name} and I'm ${this.color}\n${sound}`;
   }
 }
+
 const farmerCow = new Mamal('Lily', 'cow', 'brown and white');
-console.log(farmerCow.sound('moos'));
+console.log(farmerCow.sound('Moooo'));*/
+
 
     </script>
 </body>
